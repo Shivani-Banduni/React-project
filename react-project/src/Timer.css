@@ -1,0 +1,17 @@
+.div1{
+    border: 2px solid black;
+    display: flex;
+    height: 300px;
+    text-align: center;
+
+}
+.div2{
+    border:  2px solid black;
+    display: flex;
+    margin-top: 50px;
+    height: 200px;
+    text-align: center;
+    width: 50%;
+    flex-direction: column;
+
+}
