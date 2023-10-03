@@ -7,9 +7,12 @@ const Api = () => {
   const [search, setSearchData] = useState();
   const [show,setShow] =useState("")
   const[status,setstatus]=useState(false)
+  const[page,setpage]=useState(1)
+  const[pagedata,setpagedata]=useState([])
+
 
   useEffect(() => {
-    axios.get('https://pokeapi.co/api/v2/pokemon?limit=151').then((r) => setData(r.data.results));
+    axios.get(`https://pokeapi.co/api/v2/pokemon?limit=151`).then((r) => setData(r.data.results));
   }, []);
 
   const handlechange = (e) => {
@@ -17,25 +20,54 @@ const Api = () => {
   };
 
   const handleclick = () => {
+    
     const newData = data.filter((el) => el.name === search);
+   
     setShow(newData)
+   
     setstatus(true)
+
+    if(newData==''){
+        alert('No result found')
+        
+    }
     console.log('show',show)
   };
 
+
+  const handlenext=()=>{
+   for(var i=0;i<10;i++){
+    setpagedata(pagedata.push (data[i]))
+   }
+   
+   console.log(pagedata)
+  }
+
   return (
     <>
-      <input type='text' placeholder='Enter here' onChange={handlechange} />
+   <div className='Main'>
+   <input className='inp' type='text' placeholder='Enter here' onChange={handlechange} /><br/><br/>
       <button onClick={handleclick}>Click</button>
+      <button>Back</button>
+      <button  onClick={handlenext}>Next</button>
       
-     {status ? <div>{show.map((e)=>{return <h2>{e.name}</h2>})}</div> :  
-     <div className='main'>
+   </div>
+      
+     {status ? <div>{show.map((e)=>{return <div key={e.name}><h2 className='h'>{e.name}</h2></div>})}</div> :  
+     <div className='mainn'>
         {data.map((e) => (
-          <div key={e.name}>
-            <div>{e.name}</div>
-           <div> <img src={e.url} alt={e.name} /></div>
+          <div className='main' key={e.name}>
+            <h1>{e.name}</h1>
+           <div> <img src={e.url}/></div>
           </div>
         ))}
+
+        {/* {data.slice(0,10).map((e) => (
+          <div className='main' key={e.name}>
+            <h1>{e.name}</h1>
+           <div> <img src={e.url}/></div>
+          </div>
+        ))} */}
       </div> 
      
      }
