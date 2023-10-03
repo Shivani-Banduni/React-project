@@ -34,13 +34,16 @@ const Api = () => {
     console.log('show',show)
   };
 
-
+var arr=[]
   const handlenext=()=>{
-   for(var i=0;i<10;i++){
-    setpagedata(pagedata.push (data[i]))
-   }
+    arr.push(data.slice(page,page+10))
+    setpagedata(arr)
+   setpage(page+10)
+
+   console.log(pagedata,'pagedata')
    
-   console.log(pagedata)
+   console.log(page,'page')
+console.log(data,'data')
   }
 
   return (
@@ -55,19 +58,24 @@ const Api = () => {
       
      {status ? <div>{show.map((e)=>{return <div key={e.name}><h2 className='h'>{e.name}</h2></div>})}</div> :  
      <div className='mainn'>
-        {data.map((e) => (
+        {
+            data.map((e) => (
           <div className='main' key={e.name}>
             <h1>{e.name}</h1>
            <div> <img src={e.url}/></div>
           </div>
         ))}
 
-        {/* {data.slice(0,10).map((e) => (
+{/* 
+       { pagedata.map((e) => (
           <div className='main' key={e.name}>
             <h1>{e.name}</h1>
            <div> <img src={e.url}/></div>
           </div>
-        ))} */}
+        ))
+        } */}
+
+       
       </div> 
      
      }
