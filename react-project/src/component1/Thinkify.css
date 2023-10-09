@@ -1,0 +1,13 @@
+.main{
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* height: 500px; */
+    height: auto;
+    gap: 5vh;
+
+}
+.main1{
+    border: 2px solid red;
+    text-align: center;
+}

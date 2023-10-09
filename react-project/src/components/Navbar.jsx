@@ -4,7 +4,7 @@ import Home from './Home';
 import Product from './Product';
 const Navbar = () => {
     return (
-        <div>
+        <div className='nav'>
             <nav className="bg-blue-500 p-4">
     <div className="container mx-auto">
       <div className="flex justify-between items-center">

@@ -66,15 +66,6 @@ console.log(data,'data')
           </div>
         ))}
 
-{/* 
-       { pagedata.map((e) => (
-          <div className='main' key={e.name}>
-            <h1>{e.name}</h1>
-           <div> <img src={e.url}/></div>
-          </div>
-        ))
-        } */}
-
        
       </div> 
      

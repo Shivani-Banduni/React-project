@@ -13,6 +13,7 @@ import Timer1 from './component1/Timer1';
 import Parent from './Parent';
 import Childtoparent from './Childtoparent';
 import Api from './Api';
+import Thinkify from './component1/Thinkify';
 
 
 function App() {
@@ -38,7 +39,10 @@ function App() {
     {/* <Childtoparent/> */}
 
 
-    <Api/>
+    {/* <Api/> */}
+
+
+    <Thinkify/>
   </>
 
      
