@@ -14,6 +14,10 @@ import Parent from './Parent';
 import Childtoparent from './Childtoparent';
 import Api from './Api';
 import Thinkify from './component1/Thinkify';
+import Githubusers from './component1/Githubusers';
+import Mock from './component1/Mock';
+import Counter from './pracrice_components/Counter';
+import Temperature from './pracrice_components/Temperature';
 
 
 function App() {
@@ -21,7 +25,7 @@ function App() {
     
    
   <>
-    <Navbar/>
+    {/* <Navbar/> */}
     {/* <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/about' element={<About/>}></Route>
@@ -42,7 +46,15 @@ function App() {
     {/* <Api/> */}
 
 
-    <Thinkify/>
+    {/* <Thinkify/> */}
+
+{/* <Githubusers/> */}
+
+{/* <Mock/> */}
+
+
+{/* <Counter/> */}
+<Temperature/>
   </>
 
      

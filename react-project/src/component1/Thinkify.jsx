@@ -8,9 +8,9 @@ const Thinkify = () => {
 
    
 async function getdata(){
-    // axios.get(`https://pokeapi.co/api/v2/pokemon?q=${search}&limit=151`).then((r)=>setData (r.data.results))
-    // console.log(data,"data")
-    axios.get(`https://api.github.com/search/users?q=${search}`).then((r)=>setData (r.data))
+    axios.get(`https://pokeapi.co/api/v2/pokemon?q=${search}&limit=151`).then((r)=>setData (r.data.results))
+    console.log(data,"data")
+    // axios.get(`https://api.github.com/search/users?q=${search}`).then((r)=>setData (r))
 
 }
    
